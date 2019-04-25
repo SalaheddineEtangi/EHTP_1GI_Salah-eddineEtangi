@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Créateur des tables</title>
+</head>
+<body>
+    lignes  : <input type="number" name="lignes" value="10" id="row"><br>
+    colonnes: <input type="number" name="lignes" value="10" id="col"><br>
+    <input type="button" value="tracer" onclick="tracer()"><br>
+    <div class="out"></div>
+    <script>
+        function makeTable(l,c)
+        {
+            var table="<table border='1' width='100%'>"
+            var colonne=""
+            for(var j=0;j<c;j++){
+                colonne+="<th height=\"30px\"> </th>"}
+            for(var i=0;i<l;i++){
+            table+="<tr>"+colonne+"</tr>"
+            }
+            table+="</table>"
+            return table
+        }
+        function tracer()
+        {
+            var box=document.querySelector('.out')
+            var l = document.getElementById("row").value;
+            var c = document.getElementById("col").value;
+            box.innerHTML=makeTable(l,c);
+        }
+        
+    </script>
+</body>
+</html>
